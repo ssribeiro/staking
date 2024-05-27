@@ -1,0 +1,16 @@
+.coverage*
+.reports*
+*credentials.json
+.idea/*
+.vscode/*
+*.pyc
+__pycache__
+
+infrastructure/terraform/*/variables.*.tf
+infrastructure/terraform/*/.terraform.lock.hcl
+infrastructure/terraform/*/.terraform/*
+infrastructure/terraform/*/tmp/*
+infrastructure/terraform/*/.env.dev
+infrastructure/terraform/*/.env.prd
+infrastructure/terraform/*/.env
+infrastructure/scripts/.env

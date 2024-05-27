@@ -1,0 +1,124 @@
+@import "../../../theme/include";
+
+/** STYLE INPUT */
+.label-input {
+  max-width: rem(500);
+  background-color: transparent;
+  box-sizing: border-box;
+  border: 0;
+  font-size: rem(14);
+  font-style: normal;
+  font-weight: 400;
+  line-height: rem(27);
+  letter-spacing: rem(0.34);
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: map-get($colors, 'light');
+
+  &.full {
+    width: 100%;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    margin: 0;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  & > .style-input {
+    padding: rem(16) 0;
+    box-sizing: border-box;
+    outline: none;
+    border: rem(1) solid #333;
+    background-color: map-get($colors, 'light');
+    width: auto;
+    font-size: rem(14);
+    max-width: rem(117);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: rem(40);
+
+
+    &::placeholder {
+      color: #494C52;
+    }
+
+    &.text-dark {
+      color: map-get($colors, 'dark');
+      border-bottom: rem(1) solid map-get($colors, 'dark');
+    }
+
+    &.text-light {
+      color: map-get($colors, 'light');
+      border-bottom: rem(1) solid map-get($colors, 'light');
+
+    }
+
+  }
+
+  &.input-error {
+    border-bottom: rem(1) solid map-get($colors, 'error');
+    color: map-get($colors, 'error');
+
+  }
+}
+
+/** STYLE FORM */
+label {
+  display: flex;
+  flex-direction: column;
+  gap: rem(5);
+
+  &.full {
+    width: 100%;
+  }
+
+  &.error {
+    color: map-get($colors, 'error');
+  }
+
+  .style-form {
+    border: rem(1) solid map-get($colors, 'dark');
+    color: map-get($colors, "dark");
+    padding: rem(8) rem(16);
+    box-sizing: border-box;
+    outline: none;
+    width: 100%;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.30);
+    }
+
+    &:focus::placeholder {
+      color: map-get($colors, "dark");
+    }
+
+    &.input-error {
+      border: rem(1) solid map-get($colors, 'error');
+      color: map-get($colors, 'error');
+
+    }
+  }
+
+  /** Message error */
+  & > span {
+    font-size: rem(14);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: rem(0.28);
+  }
+
+}

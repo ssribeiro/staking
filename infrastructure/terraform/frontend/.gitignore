@@ -1,0 +1,7 @@
+tmp/*
+.terraform/*
+variables.*.tf
+!/env/variables.*.tf
+.terraform.lock.hcl
+.env.dev
+.env.prd

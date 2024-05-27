@@ -1,0 +1,34 @@
+{
+  "app": "opc",
+  "region": "eu-west-3",
+  "projects": {
+    "staking": {
+      "name": "staking",
+      "bucket": "staking",
+      "folder": "frontend/staking",
+      "folderToDeploy": "frontend/staking/dist",
+      "env": {
+        "dev": {
+          "cdnID": "E30ABWBUKGQ2HK"
+        },
+        "prd": {
+          "cdnID": ""
+        }
+      }
+    },
+    "documentation": {
+      "name": "documentation",
+      "bucket": "documentation",
+      "folder": "frontend/documentation",
+      "folderToDeploy": "frontend/documentation/out",
+      "env": {
+        "dev": {
+          "cdnID": "E2PZRP8DV80IPD"
+        },
+        "prd": {
+          "cdnID": ""
+        }
+      }
+    }
+  }
+}

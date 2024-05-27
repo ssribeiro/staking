@@ -1,0 +1,85 @@
+@import "../../../theme/include";
+
+.slider-container {
+  position: relative;
+  width: 100%;
+
+  & > .tick {
+    position: absolute;
+    width: rem(1);
+    background: map-get($colors, 'dark');
+    transform: translateX(-50%);
+    height: rem(8);
+    top: rem(7);
+
+    &:first-child {
+      display: none;
+    }
+
+    &:nth-child(2) {
+      margin-left: rem(8);
+    }
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: rem(5);
+    background: map-get($colors, 'light');
+    height: rem(8);
+    z-index: 2;
+  }
+
+  /* Curseur rouge */
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: map-get($colors, 'light');
+    width: rem(26);
+    height: rem(26);
+    border-radius: 50%;
+    cursor: pointer;
+    border: solid rem(8) #E0FE5F;
+  }
+
+  & > input {
+    width: 100%;
+  }
+}
+
+@-moz-document url-prefix() {
+
+  input[type=range]::-moz-range-thumb {
+    appearance: none;
+    cursor: pointer;
+    background: map-get($colors, 'light');
+    width: rem(25);
+    height: rem(25);
+    border-radius: 50%;
+    border: solid rem(7) #E0FE5F;
+    box-sizing: border-box;
+    pointer-events: auto;
+    z-index: 9999;
+  }
+
+  .tick {
+    top: rem(3) !important;
+  }
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+
+  .slider-container {
+    position: relative;
+    width: 100%;
+
+    & > input {
+      width: 100%;
+    }
+  }
+
+}
