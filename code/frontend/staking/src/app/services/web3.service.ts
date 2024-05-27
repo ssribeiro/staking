@@ -158,7 +158,7 @@ export async function approval(walletProvider: any, isConnected: boolean, period
 
         const decimals = SMART_CONTRACT_TOKEN.decimals;
         const tx = await contract.approve(smartContractAddress, BigInt(max * (10**decimals)), {
-            gasLimit: 500000, // Set an appropriate gas limit
+            gasLimit: 250000, // Set an appropriate gas limit
         });
         const transaction = await tx.wait();
         console.log('TRANSACTION', transaction);
@@ -247,7 +247,7 @@ export async function stake(walletProvider: any, isConnected: boolean, amount: a
 
         // Stake the token
         const tx = await contractStaking.stake(amount, {
-            gasLimit: 500000, // Set an appropriate gas limit
+            gasLimit: 250000, // Set an appropriate gas limit
         });
 
         const transaction = await tx.wait();
@@ -298,7 +298,7 @@ export async function unstake(walletProvider: any, isConnected: boolean, period:
 
         // Stake the token
         const tx = await contractStaking.unstake({
-            gasLimit: 500000, // Set an appropriate gas limit
+            gasLimit: 250000, // Set an appropriate gas limit
         });
 
         const transaction = await tx.wait();
@@ -349,7 +349,7 @@ export async function claim(walletProvider: any, isConnected: boolean, period: n
 
         // Stake the token
         const tx = await contract.claimRewards({
-            gasLimit: 500000, // Set an appropriate gas limit
+            gasLimit: 250000, // Set an appropriate gas limit
         });
 
         const transaction = await tx.wait();
