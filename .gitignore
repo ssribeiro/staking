@@ -5,6 +5,7 @@
 .vscode/*
 *.pyc
 __pycache__
+.DS_Store
 
 infrastructure/terraform/*/variables.*.tf
 infrastructure/terraform/*/.terraform.lock.hcl

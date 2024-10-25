@@ -1,0 +1,74 @@
+// Notification
+@import "function";
+@import "variable";
+#notifications {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: rem(10);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+
+  & > div {
+    margin-right: 0;
+    transition: opacity 1s;
+    border-radius: rem(2);
+    width: rem(430);
+    padding: rem(15) rem(10);
+    background-color: #0C0C0C;
+    box-shadow: $z-depth-1;
+    display: flex;
+    justify-content: center;
+    animation: slide-in 1s;
+
+    a {
+      font-size: rem(14);
+      font-weight: 400;
+      padding: 0;
+      margin: 0 0 0 rem(5);
+      color:  map_get($colors, 'yellow');
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      width: rem(16);
+    }
+
+    &.success {
+      .img-warning {
+        display: none;
+      }
+    }
+
+    &.error {
+      .img-success {
+        display: none;
+      }
+    }
+
+    &.warning {
+      .img-success {
+        display: none;
+      }
+    }
+
+    h4 {
+      color: map_get($colors, 'light');
+      font-family: "Saira", sans-serif;
+      font-size: rem(14);
+      font-weight: 400;
+      margin: 0 0 0 rem(15);
+      text-align: center;
+    }
+  }
+}
+
+@keyframes slide-up {
+  0%   {margin-top: rem(-500)}
+  50%   {margin-top: rem(50)}
+  70%   {margin-top: rem(-10)}
+  80%   {margin-top: rem(10)}
+  100%   {margin-top: 0}
+}
