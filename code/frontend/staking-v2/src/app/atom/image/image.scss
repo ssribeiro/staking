@@ -1,0 +1,45 @@
+@import "../../../theme/include";
+
+.image-style-x-tiny {
+  width: rem(10);
+}
+
+.image-style-small {
+  width: rem(16);
+}
+
+.image-style-tiny {
+  width: rem(14);
+}
+
+.image-style-medium {
+  width: rem(30);
+}
+
+.image-style-large {
+  width: rem(40);
+}
+
+.image-style-full {
+  width: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+} 
+
+// Mobile
+@media screen and (max-width: $breakpoint-mobile) {
+
+  .image-style-small {
+    width: rem(10);
+  }
+
+  .image-style-medium {
+    width: rem(20);
+  }
+
+  .image-style-large {
+    width: rem(30);
+  }
+}

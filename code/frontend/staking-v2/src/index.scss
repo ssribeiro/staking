@@ -1,0 +1,33 @@
+@import "theme/include";
+
+:root {
+  font-family: Helvetica, sans-serif;
+  font-size: rem(16);
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: rem(16);
+  font-weight: 400;
+  color: map_get($colors, 'dark-font');
+  margin: 0;
+  min-width: rem(320);
+  min-height: 100vh;
+  background-color: #F5F5F5;
+  overflow-x: hidden;
+}
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+}

@@ -1,0 +1,135 @@
+@import "../../../theme/include";
+
+.title {
+  padding: 0;
+  margin: 0;
+}
+
+.title-style {
+
+  // Font color
+  &.light {
+    color: map-get($colors, 'light');
+  }
+
+  &.dark {
+    color: map-get($colors, 'dark');
+  }
+
+  &.grey {
+    color: map-get($colors, 'grey');
+  }
+
+  // Font size
+  &.small {
+    font-size: rem(26);
+  }
+
+  &.small-3 {
+    font-size: rem(20);
+  }
+
+  &.small-2 {
+    font-size: rem(24);
+  }
+
+  &.tiny {
+    font-size: rem(16);
+  }
+
+  &.tiny-2 {
+    font-size: rem(14);
+  }
+
+  &.medium {
+    font-size: rem(32);
+  }
+
+  &.medium-2 {
+    font-size: rem(24.89);
+  }
+
+  &.large {
+    font-size: rem(40);
+  }
+
+  &.large-2 {
+    font-size: rem(48);
+  }
+
+  &.big {
+    font-size: rem(46);
+  }
+
+  &.big-2 {
+    font-size: rem(108);
+  }
+
+  // Font Weight
+  &.text-medium {
+    font-weight: 500;
+    font-family: 'Neue Medium', sans-serif;
+  }
+
+  &.text-bold {
+    font-weight: 700;
+    font-family: 'Neue Bold', sans-serif;
+
+  }
+
+  &.text-thin {
+    font-weight: 100;
+    font-family: 'Neue Thin', sans-serif;
+  }
+
+  &.text-regular {
+    font-weight: 300;
+    font-family: 'Neue Regular', sans-serif;
+  }
+
+  &.text-normal {
+    font-weight: 400;
+    font-family: 'Neue Normal', sans-serif;
+  }
+
+  &.text-extrabold {
+    font-family: 'Neue Bold', sans-serif;
+    font-weight: 800;
+  }
+
+  &.style-font-italic {
+    font-style: italic;
+  }
+
+  &.style-font-normal {
+    font-style: normal;
+  }
+
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+
+  .title-style {
+
+    &.small {
+      font-size: rem(18);
+    }
+
+    &.tiny {
+      font-size: rem(14);
+    }
+
+    &.medium {
+      font-size: rem(26);
+    }
+
+    &.large {
+      font-size: rem(32);
+    }
+
+    &.big {
+      font-size: rem(32);
+    }
+  }
+
+}
