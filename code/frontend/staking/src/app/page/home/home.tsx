@@ -581,7 +581,8 @@ function HomePage() {
                                 </div>
                             </div>
                             <div className={"right"}>
-                                <div className={"stake"}>
+
+                                {/*<div className={"stake"}>
                                     <Paragraph
                                         text={"Select an amount to Stake:"}
                                         size={"medium"}
@@ -634,7 +635,7 @@ function HomePage() {
                                             color={"dark"}
                                         />
                                     </div>
-                                </div>
+                                </div>*/}
                             </div>
                         </div>
                     </div>
@@ -790,6 +791,7 @@ function HomePage() {
                                                 }
                                                 text={"Unstake"}
                                             ></Button>
+                                            {/*
                                             <Button
                                                 click={() => claim(0)}
                                                 color={"dark"}
@@ -800,6 +802,7 @@ function HomePage() {
                                                 }
                                                 text={"Claim"}
                                             ></Button>
+                                            */}
                                         </div>
                                     </td>
                                 </tr>
@@ -911,6 +914,7 @@ function HomePage() {
                                                 }
                                                 text={"Unstake"}
                                             ></Button>
+                                            {/*
                                             <Button
                                                 click={() => claim(1)}
                                                 color={"dark"}
@@ -921,6 +925,7 @@ function HomePage() {
                                                 }
                                                 text={"Claim"}
                                             ></Button>
+                                            */}
                                         </div>
                                     </td>
                                 </tr>
@@ -1032,6 +1037,7 @@ function HomePage() {
                                                 }
                                                 text={"Unstake"}
                                             ></Button>
+                                            {/*
                                             <Button
                                                 click={() => claim(3)}
                                                 color={"dark"}
@@ -1042,6 +1048,7 @@ function HomePage() {
                                                 }
                                                 text={"Claim"}
                                             ></Button>
+                                            */}
                                         </div>
                                     </td>
                                 </tr>
@@ -1154,6 +1161,7 @@ function HomePage() {
                                                 }
                                                 text={"Unstake"}
                                             ></Button>
+                                            {/*
                                             <Button
                                                 click={() => claim(6)}
                                                 color={"dark"}
@@ -1164,6 +1172,7 @@ function HomePage() {
                                                 }
                                                 text={"Claim"}
                                             ></Button>
+                                            */}
                                         </div>
                                     </td>
                                 </tr>
