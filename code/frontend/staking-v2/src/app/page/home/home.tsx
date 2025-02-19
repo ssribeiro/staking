@@ -631,18 +631,18 @@ function HomePage() {
                                     </div>
                                 </div>
                                 <div className={"claim-button"}>
-                                    <Button
+                                    {/* <Button
                                         click={() => claim()}
                                         color={"dark"}
                                         styleButton="primary"
                                         loading={isLoadingClaim}
                                         disabled={balance.rewards <= 0}
                                         text={"Claim"}
-                                    ></Button>
+                                    ></Button> */}
                                 </div>
                             </div>
                             <div className={"right"}>
-                                <div className={"stake"}>
+                                {/* <div className={"stake"}>
                                     <div className={"available"}>
                                         <Paragraph
                                             text={"Available $OPEN Balance:"}
@@ -691,7 +691,7 @@ function HomePage() {
                                             loading={isLoadingStake}
                                         ></Button>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
