@@ -21,7 +21,8 @@ Starvation mode ensures that users can only stake when the contract is healthy a
 
 Once the contract is healthy again and the user either unstakes or stakes more, they regain the ability to perform another Starving Unstake in any future starvation period.
 
-Why Contract V2 Is Safer
+Why Contract V2 Is Safer:
+
 This second version is safer for users, as there is no condition that can permanently lock a user’s principal. Trust in this contract requires zero risk to the user’s core funds. The only trust required is that admins maintain a fair APY.
 
 ## Overview (Copy from original README)
