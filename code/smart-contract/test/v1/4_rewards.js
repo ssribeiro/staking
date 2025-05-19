@@ -113,7 +113,7 @@ contract("Staking - Reward", function (accounts) {
         assert.isTrue(diff <= tolerance, "The total of rewards from pending should be the same as the effective one");
     });
 
-    it.only("Check rewards during multiple APY change", async function () {
+    it("Check rewards during multiple APY change", async function () {
         await instanceStaking.stake(AMOUNT, { from: user });
 
         // Based APY

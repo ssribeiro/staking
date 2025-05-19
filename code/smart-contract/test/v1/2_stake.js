@@ -38,6 +38,28 @@ contract("Staking - Stake", (accounts) => {
         // Check the total staked amount
         const totalStaked = await instanceStaking.totalStaked();
         assert.equal(totalStaked.toString(), AMOUNT, "The total staked amount should match the staked amount");
+
+        // Check the total balance of the user
+        const userBalanceBalanceOf = await instanceStaking.balanceOf(user);
+        assert.equal(userBalanceBalanceOf[2].toString(), AMOUNT, "The user balance amount should match the staked amount");
+    });
+
+    it("Do a simple staking for a user, then check balance from another user", async function () {
+
+        // Call the stake function
+        await instanceStaking.stake(AMOUNT, { from: user });
+
+        // Check the user's staked balance
+        const userBalance = await instanceStaking.userBalanceInitial(user);
+        assert.equal(userBalance.toString(), AMOUNT, "The user's staked balance should match the staked amount");
+
+        // Check the total staked amount
+        const totalStaked = await instanceStaking.totalStaked({ from: user1 });
+        assert.equal(totalStaked.toString(), AMOUNT, "The total staked amount should match the staked amount");
+
+        // Check the total balance of the user
+        const userBalanceBalanceOf = await instanceStaking.balanceOf(user, { from: user1 });
+        assert.equal(userBalanceBalanceOf[2].toString(), AMOUNT, "The user balance amount should match the staked amount");
     });
 
     it("Do a double staking for a user", async () => {

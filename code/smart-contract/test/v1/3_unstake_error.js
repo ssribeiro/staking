@@ -32,7 +32,7 @@ contract("Staking - Unstake Error", function (accounts) {
         await expectRevert(instanceStaking.unstake({from: user}), "Tokens are locked");
     });
 
-    it("Try to unstake without having fund the smart contract ith rewards", async function () {
+    it("Try to unstake without having fund the smart contract with rewards", async function () {
         await instanceStaking.stake(AMOUNT, { from: user });
         await time.increase(120);
         await expectRevert(instanceStaking.unstake({from: user}), "No fund available");
@@ -44,7 +44,7 @@ contract("Staking - Unstake Error", function (accounts) {
         await time.increase(120);
 
         await instanceStaking.pause();
-        await expectRevert.unspecified(instanceStaking.stake(AMOUNT, {from: user}));
+        await expectRevert.unspecified(instanceStaking.unstake({from: user}), "Pausable: paused");
     });
 });
 

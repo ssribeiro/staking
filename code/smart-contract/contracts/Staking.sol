@@ -172,7 +172,7 @@ contract Staking is Ownable, Pausable, ReentrancyGuard {
 		
 		data.lockStart = userLock[_user];
 		data.lockRemaining = remaining;
-		data.balance = userBalanceInitial[msg.sender];
+		data.balance = userBalanceInitial[_user];
 		data.rewards = pendingRewards(_user);
 		
 		return data;
