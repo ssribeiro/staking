@@ -13,7 +13,7 @@ If the contract runs out of reward tokens, it will no longer lock users’ funds
 ## Starving Unstake
 Each user is allowed one Starving Unstake per starvation period.
 
-It allows the user to unstake their principal only, while automatically restaking the rewards to be claimed once the contract is replenished and healthy again.
+It allows the user to unstake their principal only, while automatically restaking the rewards (no lock period applied this time) to be claimed once the contract is replenished and healthy again.
 
 A single Starving Unstake will trigger the starvation mode, pausing the contract to prevent new stakes.
 
