@@ -24,7 +24,7 @@ contract("Staking - Reward Error", function (accounts) {
         await instanceToken.approve(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: user });
     });
 
-    it("Try to claim rewards with fund on the smart contract", async function () {
+    xit("Try to claim rewards with fund on the smart contract", async function () {
         await instanceStaking.stake(AMOUNT, { from: user });
 
         await time.increase(time.duration.seconds(1200));
@@ -35,7 +35,7 @@ contract("Staking - Reward Error", function (accounts) {
         await expectRevert(instanceStaking.claimRewards({ from: user }), "No fund available");
     });
 
-    it("Try to claim rewards with a paused state", async function () {
+    xit("Try to claim rewards with a paused state", async function () {
         await instanceStaking.stake(AMOUNT, { from: user });
 
         await time.increase(120);

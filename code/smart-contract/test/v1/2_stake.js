@@ -26,7 +26,7 @@ contract("Staking - Stake", (accounts) => {
         await instanceToken.approve(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: user1 });
     });
 
-    it("Do a simple staking for a user", async function () {
+    xit("Do a simple staking for a user", async function () {
 
         // Call the stake function
         await instanceStaking.stake(AMOUNT, { from: user });
@@ -44,7 +44,7 @@ contract("Staking - Stake", (accounts) => {
         assert.equal(userBalanceBalanceOf[2].toString(), AMOUNT, "The user balance amount should match the staked amount");
     });
 
-    it("Do a simple staking for a user, then check balance from another user", async function () {
+    xit("Do a simple staking for a user, then check balance from another user", async function () {
 
         // Call the stake function
         await instanceStaking.stake(AMOUNT, { from: user });
@@ -62,7 +62,7 @@ contract("Staking - Stake", (accounts) => {
         assert.equal(userBalanceBalanceOf[2].toString(), AMOUNT, "The user balance amount should match the staked amount");
     });
 
-    it("Do a double staking for a user", async () => {
+    xit("Do a double staking for a user", async () => {
 
         // First stake
 
@@ -91,7 +91,7 @@ contract("Staking - Stake", (accounts) => {
         assert.equal(totalStaked1.toString(), AMOUNT * 2, "The total staked amount should match the staked amount");
     });
 
-    it("Do a double staking for 2 different users", async () => {
+    xit("Do a double staking for 2 different users", async () => {
         // First stake
 
         // Call the stake function

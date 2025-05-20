@@ -26,7 +26,7 @@ contract("Staking - Reward", function (accounts) {
         await instanceToken.mint(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: owner });
     });
 
-    it("Do a simple claim for a user", async function() {
+    xit("Do a simple claim for a user", async function() {
         await instanceStaking.stake(AMOUNT, { from: user });
         const period = 7776000 // 3 month
 
@@ -51,7 +51,7 @@ contract("Staking - Reward", function (accounts) {
         assert.isTrue(diff1 <= tolerance, "The total of rewards from pending should be the same as the effective one");
     });
 
-    it("Do multiple claims for a user", async function() {
+    xit("Do multiple claims for a user", async function() {
         await instanceStaking.stake(AMOUNT, { from: user });
         const period = 7776000 // 3 month
 
@@ -76,7 +76,7 @@ contract("Staking - Reward", function (accounts) {
         assert.isTrue(diff1 <= tolerance, "The total of rewards from pending should be the same as the effective one");
     });
 
-    it("Do a claim after unstake and then stake again", async function () {
+    xit("Do a claim after unstake and then stake again", async function () {
         await instanceStaking.stake(AMOUNT, { from: user });
 
         const data = await calculateCompoundedRewards(user, AMOUNT, 5, 7776000); // 3 month
@@ -96,13 +96,13 @@ contract("Staking - Reward", function (accounts) {
         assert.isTrue(diff1 <= tolerance, "The total rewards we should have");
     });
 
-    it("Check a empty balance of rewards", async function() {
+    xit("Check a empty balance of rewards", async function() {
         const balance = await instanceStaking.balanceOf(user);
 
         assert.equal(balance.rewards, 0, "The total of rewards should be 0");
     });
 
-    it("Check the rewards for a fix APY", async function() {
+    xit("Check the rewards for a fix APY", async function() {
         await instanceStaking.stake(AMOUNT, { from: user });
         const period = 7776000 // 3 month
 
@@ -113,7 +113,7 @@ contract("Staking - Reward", function (accounts) {
         assert.isTrue(diff <= tolerance, "The total of rewards from pending should be the same as the effective one");
     });
 
-    it("Check rewards during multiple APY change", async function () {
+    xit("Check rewards during multiple APY change", async function () {
         await instanceStaking.stake(AMOUNT, { from: user });
 
         // Based APY

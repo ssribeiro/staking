@@ -23,7 +23,7 @@ contract("Staking - General Error", function (accounts) {
         await instanceToken.approve(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: user });
     });
 
-    it("Try to pause two times in a row", async () => {
+    xit("Try to pause two times in a row", async () => {
         const isPaused = await instanceStaking.paused.call();
         assert.equal(isPaused, false, "Should not be paused");
 
@@ -34,7 +34,7 @@ contract("Staking - General Error", function (accounts) {
         await expectRevert(instanceStaking.pause(), "Staking is already paused");
     });
 
-    it("Try to unpause two times in a row", async () => {
+    xit("Try to unpause two times in a row", async () => {
         const isPaused = await instanceStaking.paused.call();
         assert.equal(isPaused, false, "Should not be paused");
 

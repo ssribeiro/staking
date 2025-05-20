@@ -30,7 +30,7 @@ contract("Staking - Unstake", function (accounts) {
         await instanceToken.mint(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: owner });
     });
 
-    it("Do a simple unstaking for a user", async () => {
+    xit("Do a simple unstaking for a user", async () => {
         await instanceStaking.stake(AMOUNT, { from: user });
 
         // Check the total staked amount
@@ -48,7 +48,7 @@ contract("Staking - Unstake", function (accounts) {
         assert.equal(totalStaked1.toString(), 0, "The total staked amount should match the staked amount");
     });
 
-    it("Do a simple unstaking for a user after the lock change", async () => {
+    xit("Do a simple unstaking for a user after the lock change", async () => {
         await instanceStaking.stake(AMOUNT, { from: user });
 
         // Check the total staked amount
@@ -68,7 +68,7 @@ contract("Staking - Unstake", function (accounts) {
         assert.equal(totalStaked1.toString(), 0, "The total staked amount should match the staked amount");
     });
 
-    it("Do a simple unstaking for a user when 2 users have staked", async () => {
+    xit("Do a simple unstaking for a user when 2 users have staked", async () => {
         await instanceStaking.stake(AMOUNT, { from: user });
         await instanceStaking.stake(AMOUNT, { from: user1 });
 

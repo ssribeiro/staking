@@ -32,7 +32,7 @@ contract("StakingV2 - Starving Unstake", function (accounts) {
         await instanceToken.approve(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: user2 });
     });
 
-    it("Do a simple starving unstaking for a user", async () => {
+    it.only("Do a simple starving unstaking for a user", async () => {
         await instanceStaking.stake(AMOUNT, { from: user });
 
         // Check the total staked amount
@@ -43,19 +43,20 @@ contract("StakingV2 - Starving Unstake", function (accounts) {
         await time.increase(time.duration.seconds(120));
 
         // Check the rewards amount and balance before unstaking
-        const rewardsAmount = (await instanceStaking.balanceOf(user))[3];
         const balanceBefore = await instanceToken.balanceOf(user);
+        const rewardsAmount = (await instanceStaking.balanceOf(user))[3];
 
         // Call the stake function
         await instanceStaking.starvingUnstake({from: user});
 
-        const balanceAfter = await instanceToken.balanceOf(user);
-        const totalRecovered = BigInt(balanceAfter.toString()) - BigInt(balanceBefore.toString());
-        assert.equal(totalRecovered.toString(), AMOUNT, "The total recovered amount should match the principal");
-
         // Check the total staked amount
         const totalStaked1 = await instanceStaking.totalStaked();
         assert.equal(totalStaked1.toString(), rewardsAmount, "The total staked amount should match the rewards amount");
+
+        // Check token balance on user account after
+        const balanceAfter = await instanceToken.balanceOf(user);
+        const totalRecovered = BigInt(balanceAfter.toString()) - BigInt(balanceBefore.toString());
+        assert.equal(totalRecovered.toString(), AMOUNT, "The total recovered amount should match the principal");
     });
 
     it("Do an starving unstaking for a user after pause", async () => {

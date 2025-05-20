@@ -248,7 +248,10 @@ contract StakingV2 is Ownable, Pausable, ReentrancyGuard {
 		
 		// Calculate the rewards
 		uint256 userCompoundBalance = (userBalance[msg.sender] * compoundIndex) / ONE;
-		uint256 rewards = userCompoundBalance - userStakedAmount;
+		uint256 rewards = 0;
+		if(userCompoundBalance > userStakedAmount) {
+			rewards = userCompoundBalance - userStakedAmount;
+		}
 		
 		require(rewards > 0, "No rewards available");
 		uint256 thisBalance = token.balanceOf(address(this));
@@ -303,7 +306,10 @@ contract StakingV2 is Ownable, Pausable, ReentrancyGuard {
 
 		uint256 currentCompoundIndex = calculateUpdatedIndex();		
 		uint256 userCompoundBalance = (userBalance[_user] * currentCompoundIndex) / ONE;
-		uint256 rewards = userCompoundBalance - userStakedAmount;
+		uint256 rewards = 0;
+		if(userCompoundBalance > userStakedAmount) {
+			rewards = userCompoundBalance - userStakedAmount;
+		}
 		
 		return rewards;
 	}
@@ -323,12 +329,13 @@ contract StakingV2 is Ownable, Pausable, ReentrancyGuard {
 	function withdraw() external onlyOwner {
 		uint256 thisBalance = token.balanceOf(address(this));
 		require(thisBalance >= totalStaked, "No rewards to withdraw");
-		require(thisBalance - totalStaked > 0, "No rewards to withdraw");
 		
-		uint256 balance = thisBalance - totalStaked;
-		token.safeTransfer(vault, balance);
+		uint256 rewardsBalance = thisBalance - totalStaked;
+		require(rewardsBalance > 0, "No rewards to withdraw");
 		
-		emit Withdraw(vault, balance);
+		token.safeTransfer(vault, rewardsBalance);
+		
+		emit Withdraw(vault, rewardsBalance);
 	}
 
 	/*

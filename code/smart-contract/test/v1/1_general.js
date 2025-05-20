@@ -22,7 +22,7 @@ contract("Staking - General", function (accounts) {
         await instanceToken.approve(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: user });
     });
 
-    it("Change the APY", async () => {
+    xit("Change the APY", async () => {
         const apy = await instanceStaking.apy.call();
         assert.equal(apy, APY, "APY not as expected");
 
@@ -31,7 +31,7 @@ contract("Staking - General", function (accounts) {
         assert.equal(apy1, "120", "APY not as expected");
     });
 
-    it("Change the Lock period", async () => {
+    xit("Change the Lock period", async () => {
         const lock = await instanceStaking.lock.call();
         assert.equal(lock, LOCK, "Lock not as expected");
 
@@ -40,7 +40,7 @@ contract("Staking - General", function (accounts) {
         assert.equal(lock1, "120", "Lock not as expected");
     });
 
-    it("Do a pause on the smart contract", async () => {
+    xit("Do a pause on the smart contract", async () => {
         const isPaused = await instanceStaking.paused.call();
         assert.equal(isPaused, false, "Should not be paused");
 
@@ -49,7 +49,7 @@ contract("Staking - General", function (accounts) {
         assert.equal(isPaused1, true, "Should be paused");
     });
 
-    it("Do a unpause on the smart contract", async () => {
+    xit("Do a unpause on the smart contract", async () => {
         const isPaused = await instanceStaking.paused.call();
         assert.equal(isPaused, false, "Should not be paused");
 

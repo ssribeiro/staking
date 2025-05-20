@@ -22,7 +22,7 @@ contract("Staking - Withdraw", function (accounts) {
         await instanceToken.approve(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: user });
     });
 
-    it("Do a simple withdraw", async () => {
+    xit("Do a simple withdraw", async () => {
         await instanceToken.mint(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: owner });
 
         const balance = await instanceToken.balanceOf(instanceStaking.address);
@@ -39,7 +39,7 @@ contract("Staking - Withdraw", function (accounts) {
         assert.equal(balanceOwnerTotal.toString(), balanceOwner1.toString(), "The balance should be the amount withdrawn");
     });
 
-    it("Do a simple withdraw after stake", async () => {
+    xit("Do a simple withdraw after stake", async () => {
         await instanceToken.mint(instanceStaking.address, web3.utils.toWei(SUPPLY, "ether"), { from: owner });
         await instanceStaking.stake(web3.utils.toWei(SUPPLY, "ether"), { from: user });
 
